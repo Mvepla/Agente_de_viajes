@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de viajes</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Asistente de viajes</h1>
+    <form id="prompt-form">
+        <label for="user_prompt">realiza tu pregunta:</label>
+        <input type="text" id="user_prompt" name="user_prompt">
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Chat History</h2>
+    <div id="chat-history"></div>
+    <script>
+        $(document).ready(function(){
+            $('#prompt-form').on('submit', function(e){
+                e.preventDefault();
+                var userPrompt = $('#user_prompt').val();
+                $.ajax({
+                    url: '/get_response',
+                    type: 'POST',
+                    data: { user_prompt: userPrompt },
+                    success: function(data){
+                        $('#chat-history').append('<p><strong>You:</strong> ' + userPrompt + '</p>');
+                        $('#chat-history').append('<p><strong>Assistant:</strong> ' + data.response + '</p>');
+                        $('#user_prompt').val('');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
