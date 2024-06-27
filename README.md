@@ -1,11 +1,11 @@
-# G-Priest: Chatbot Simulador de Cura Católico
+# Chatbot agente de viajes
 
-G-Priest es un chatbot que simula ser un cura católico, utilizando la API de Cohere para el procesamiento del lenguaje natural y técnicas de prompt engineering. Esta aplicación está desplegada en Render.
+Chatbot que simula ser un agente de viajes para poder ayudarte a , utilizando la API de Cohere para el procesamiento del lenguaje natural y técnicas de prompt engineering. Esta aplicación está desplegada en Render.
 
 ## Estructura del Proyecto
 
 ```plaintext
-G-Priest/
+Agente_de_viajes/
 │
 ├── templates/
 │   └── index.html
@@ -32,7 +32,7 @@ Para ejecutar esta aplicación, necesitas tener instalados los siguientes compon
 1. Clona este repositorio:
    ```bash
    git clone <URL del repositorio>
-   cd G-Priest
+   cd Agente_de_viajes
    ```
 
 2. Crea un entorno virtual (opcional pero recomendado):
